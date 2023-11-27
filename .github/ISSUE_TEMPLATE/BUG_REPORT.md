@@ -24,15 +24,17 @@ Uma descrição clara e concisa do que você esperava que acontecesse.
 Se aplicável, adicione capturas de tela para ajudar a explicar seu problema.
 
 **Desktop (preencha as seguintes informações):**
- - SO: [por ex. iOS]
- - Navegador [por ex. chrome, safári]
- - Versão [por ex. 22]
+
+- SO: [por ex. iOS]
+- Navegador [por ex. chrome, safári]
+- Versão [por ex. 22]
 
 **Smartphone (preencha as seguintes informações):**
- - Dispositivo: [por ex. iPhone15]
- - SO: [por ex. iOS8.1]
- - Navegador [por ex. navegador de ações, safari]
- - Versão [por ex. 22]
+
+- Dispositivo: [por ex. iPhone15]
+- SO: [por ex. iOS8.1]
+- Navegador [por ex. navegador de ações, safari]
+- Versão [por ex. 22]
 
 **Contexto adicional**
 Adicione qualquer outro contexto sobre o problema aqui.
