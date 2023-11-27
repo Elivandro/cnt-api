@@ -17,9 +17,6 @@
     <header class="bg-gray-900 py-6">
         <div class="container mx-auto w-full lg:w-10/12 flex justify-between items-center px-4">
             <h1 class="lg:text-3xl font-bold text-green-500">Documentação da API Viacnt</h1>
-            <nav>
-                <a href="{{ route('contato') }}" class="text-gray-300 hover:text-gray-100 px-4">Contato</a>
-            </nav>
         </div>
     </header>
 
@@ -27,29 +24,39 @@
         <div class="flex flex-col lg:flex-row w-full lg:w-10/12 justify-center" x-data="{
             open : true,
             show : false,
-            contact : false
+            contact : false,
+            donation : false
             }">
             <nav class="w-10/12 mx-auto lg:w-1/4 px-4 py-8">
                 <ul class="flex lg:block justify-between">
                     <li class="mb-2">
                         <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': open}" @click="open = true; show = false; contact = false">
+                           :class="{'text-green-500': open}"
+                           @click="open = true; show = false; contact = false; donation = false">
                             Início
                         </a>
                     </li>
 
                     <li class="mb-2">
                         <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': show}" @click="show = true; open = false; contact = false"
+                           :class="{'text-green-500': show}"
+                           @click="show = true; open = false; contact = false; donation = false"
                         >Endpoint</a>
                     </li>
 
                     <li class="mb-2">
                         <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': contact}" @click="show = false; open = false; contact = true"
+                           :class="{'text-green-500': contact}"
+                           @click="show = false; open = false; contact = true; donation = false"
                         >Contato</a>
                     </li>
 
+                    <li class="mb-2">
+                        <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                           :class="{'text-green-500': donation}"
+                           @click="show = false; open = false; contact = false; donation = true"
+                        >Doações</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -87,7 +94,8 @@
                         <h2 class="text-2xl font-semibold mb-2">Uso Responsável</h2>
                         <p class="mb-4">Solicitamos aos usuários que respeitem os limites de requisições para garantir
                             um serviço estável para todos os usuários. Incentivamos contribuições para aprimorar a API e
-                            expandir suas funcionalidades.</p>
+                            expandir suas funcionalidades. Por favor, caso encontre algum erro na base de dados abra uma
+                            issue no github, ou entre em contato conosco.</p>
 
                         <h2 class="text-2xl font-semibold mb-2">Links Úteis</h2>
                         <p class="mb-4"><span class="font-semibold">GitHub:</span> <a
@@ -234,26 +242,57 @@
                             <h3 class="text-xl font-semibold mb-2">Elivandro</h3>
                             <p class="mb-1"><span class="font-semibold">E-mail:</span> <a
                                     href="mailto:elivandro@hotmail.com.br" class="text-blue-500 hover:underline"
-                                    target="_blank" title="Email do Elivandro">elivandro@exemplo.com</a></p>
+                                    target="_blank" title="Email do Elivandro">elivandro@hotmail.com.br</a></p>
                             <p class="mb-1"><span class="font-semibold">Telefone:</span> <a
                                     href="https://wa.me/5569999076818" class="text-blue-500 hover:underline"
-                                    target="_blank" title="Whatsapp do Elivandro">+987654321</a></p>
+                                    target="_blank" title="Whatsapp do Elivandro">+55 (69) 9 9907-6818</a></p>
                             <p class="mb-1"><span class="font-semibold">GitHub:</span> <a
                                     href="https://github.com/Elivandro" class="text-blue-500 hover:underline"
-                                    target="_blank" title="Github do Elivandro">GitHub do Elivandro</a></p>
+                                    target="_blank" title="Github do Elivandro">GitHub</a></p>
                             <p><span class="font-semibold">LinkedIn:</span> <a
                                     href="https://www.linkedin.com/in/elivandroeas/"
                                     class="text-blue-500 hover:underline" target="_blank" title="Linkedin do Elivandro">LinkedIn
-                                    do Elivandro</a></p>
+                                </a></p>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="donation">
+
+                <div class="container mx-auto py-8">
+                    <h1 class="text-4xl font-bold mb-4 text-green-500">Documentação da API Viacnt</h1>
+
+                    <div class="bg-white shadow p-6 rounded">
+                        <h2 class="text-2xl font-semibold mb-2">Faça uma doação</h2>
+                        <p class="mb-4">Se você gostou do nosso trabalho e deseja contribuir, estamos abertos a doações
+                            via PIX. Agradecemos seu apoio!</p>
+
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="w-1/2">
+                                <h3 class="text-xl font-semibold mb-2">Dados para PIX</h3>
+                                <p class="mb-1"><span class="font-semibold">Chave PIX:</span> doacoes@exemplo.com</p>
+                                <p><span class="font-semibold">Nome do destinatário:</span> API Viacnt</p>
+                            </div>
+                            <div class="w-1/2 text-right">
+                                <!-- Substitua o link da imagem pelo QR Code gerado para o PIX -->
+                                <img src="seu-link-do-qrcode-pix" alt="QR Code PIX" class="w-32 h-32 object-cover">
+                            </div>
+                        </div>
+
+                        <p class="text-sm italic">Escaneie o QR Code com o app do seu banco ou utilize os dados do PIX
+                            fornecidos acima para fazer sua doação. Obrigado!</p>
                     </div>
                 </div>
             </section>
         </div>
     </main>
 
-    <footer class="bg-gray-900 py-6 text-center text-gray-300 fixed bottom-0 w-full">
+    <footer class="bg-gray-900 flex flex-col py-6 text-center text-gray-300 fixed bottom-0 w-full">
+        <p></p>
         <p>&copy; {{date_format(now(), 'Y')}} API Viacnt. Todos os direitos reservados.</p>
+        <p class="text-sm mt-4">
+            Não distribuímos ou comercializamos bases de dados.
+        </p>
     </footer>
 </div>
 </body>
