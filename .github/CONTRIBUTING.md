@@ -1,122 +1,148 @@
-# Contribuindo para Gerencie Mei
-Antes de enviar sua contribuição, reserve um momento e leia as seguintes diretrizes.
+# Contributing to ViaCnt
 
-- [1. Começando](#1-começando)
-- [2. Diretrizes de relatórios de problemas](#2-issue-reporting-guidelines)
-- [3. Diretrizes de pull request](#3-pull-request-guidelines)
-- [4. Novos recursos e vulnerabilidades de segurança](#4-novos-recursos-e-vulnerabilidades-de-segurança)
-- [5. Configuração de desenvolvimento](#5-desenvolvimento-configuração)
-    - [5.1. Requisitos mínimos](#51-minimum-requirements)
-    - [5.2. Prepare o Ambiente](#52-prepare-o-ambiente)
-    - [5.3. Criar o ambiente](#53-criar-o-ambiente)
-    - [5.4. Ativos de construção](#54-building-assets)
-- [6. Abrir aplicativo no navegador](#6-abrir-aplicativo-no-browser)
-- [7. Testes](#7-testes)
+Before submitting your contribution, take a moment to read the following guidelines.
 
-## 1. Primeiros passos
+- [1. Getting Started](#1-getting-started)
+- [2. Issue Reporting Guidelines](#2-issue-reporting-guidelines)
+- [3. Pull Request Guidelines](#3-pull-request-guidelines)
+- [4. New Features and Security Vulnerabilities](#4-new-features-and-security-vulnerabilities)
+- [5. Development Setup](#5-development-setup)
+    - [5.1. Minimum Requirements](#51-minimum-requirements)
+    - [5.2. Set Up the Environment](#52-set-up-the-environment)
+    - [5.3. Create the Environment](#53-create-the-environment)
+    - [5.4. Building Assets](#54-building-assets)
+- [6. Open Application in Browser](#6-open-application-in-browser)
+- [7. Testing](#7-testing)
 
-Antes de você começar:
-- Verifique se seu ambiente atende aos requisitos mínimos estabelecidos.
-- Confira os [problemas existentes](https://github.com/TiagoLemosNeitzke/gerencie_mei/issues) e veja se aceitamos contribuições para o seu tipo de problema em nosso [Discord Adicionar o link](https://discord.com/).
+## 1. Getting Started
 
-<br />
-
-## 2. Diretrizes para relatórios de problemas
-
-- A lista de problemas deste repositório é exclusivamente para relatórios de bugs, relatórios de documentos e solicitações de recursos. Problemas não conformes serão encerrados imediatamente.
-
-    - Para responder às suas perguntas, você pode obter respostas em nosso [Whatsapp](https://wa.me/5567998686331).
-
-- Tente pesquisar pelo seu problema, ele já pode ter sido respondido ou até mesmo corrigido no branch master (principal).
-
-- Use apenas a quantidade mínima de código necessária para reproduzir o comportamento inesperado. Quanto mais precisamente você isolar o problema, mais rápido poderemos investigar.
-
-- Verifique se o problema pode ser reproduzido com a última versão estável do `Gerencie Mei` e indique a versão específica que você está usando.
-
-- Problemas sem etapas claras de reprodução não serão triados. Se um problema rotulado como "precisa de reprodução" não receber mais informações do autor do problema por mais de 7 dias, ele será fechado.
-
-- Se o seu problema foi resolvido, mas ainda está aberto, não hesite em fechá-lo. Caso você tenha encontrado uma solução sozinho, pode ser útil explicar como você a corrigiu.
-
-- Mais importante ainda, pedimos sua paciência: a equipe deve equilibrar sua solicitação com muitas outras responsabilidades - corrigir outros bugs, responder a outras perguntas, novos recursos, nova documentação, etc.
+Before you start:
+- Ensure your environment meets the established minimum requirements.
+- Check the [existing issues](https://github.com/Elivandro/cnt-api/issues) and see if we accept contributions for your type of problem.
 
 <br />
 
-## 3. Diretrizes de pull request
-- Se adicionar um novo recurso:
-    - Forneça um motivo convincente para adicionar esse recurso. Idealmente, você deve abrir um problema de sugestão primeiro e dar sinal verde antes de trabalhar nele.
-    - Inclua testes para todos os códigos adicionados ou modificados.
-    - Certifique-se de que todos os testes estão passando.
+## 2. Issue Reporting Guidelines
 
-- Se corrigindo um bug:
-    - Se você estiver resolvendo um problema especial, adicione `(correção: #xxxx[,#xxx])` (#xxxx é o ID do problema) em seu título de PR para obter um registro de lançamento melhor, por exemplo, `correção: atualização de codificação/decodificação de entidades (correção #3899)`.
-    - Forneça uma descrição detalhada do bug no PR.
+- The list of issues in this repository is exclusively for bug reports, documentation reports, and feature requests. Non-conforming issues will be closed immediately.
 
-<br />
+    - For answers to your questions, you can get responses on our [Whatsapp](https://wa.me/556799082296) or [Whatsapp](https://wa.me/556999076818).
 
-## 4. Novos recursos e vulnerabilidades de segurança
+- Try searching for your issue; it might have already been addressed or fixed on the master branch.
 
-Se você pretende propor um novo recurso, envie um problema para este repositório.
+- Use only the minimum amount of code necessary to reproduce the unexpected behavior. The more precisely you isolate the problem, the faster we can investigate.
 
-Em caso de descoberta de uma vulnerabilidade de segurança em `Gerencie Mei`, **NÃO** divulgue publicamente como um problema, envie uma mensagem para o endereço de e-mail [tiago.neitzke@yahoo.com](mailto://tiago.neitzke@yahoo.com). Todas as vulnerabilidades de segurança serão resolvidas o mais rápido possível.
+- Check if the issue can be reproduced with the latest stable version of `Via Cnt` and indicate the specific version you are using.
 
-<br />
+- Issues without clear reproduction steps will not be triaged. If an issue labeled as "needs reproduction" doesn't receive further information from the issue author for more than 7 days, it will be closed.
 
-## 5. Configuração de desenvolvimento
-`Gerencie Mei` é desenvolvido com a versão Laravel 10.x. Todo o ambiente de desenvolvimento pode ser criado facilmente usando `Laravel Sail`. Criando assim um ambiente padrão, onde todos os desenvolvedores terão as mesmas versões de determinadas tecnologias em suas estações de trabalho, evitando possíveis problemas por incompatibilidade de versões.
+- If your issue has been resolved but is still open, feel free to close it. If you have found a solution on your own, it might be helpful to explain how you fixed it.
 
-`Laravel Sail` conforme definido em sua [documentação](https://laravel.com/docs/10.x/sail) tem a seguinte definição:
-
-> O Laravel Sail é uma interface de linha de comando leve para interagir com o ambiente de desenvolvimento Docker padrão do Laravel. O Sail fornece um excelente ponto de partida para criar um aplicativo Laravel usando PHP, MySQL e Redis sem exigir experiência anterior com o Docker.
-
-Consequentemente, para que possamos manter a compatibilidade entre os ambientes de desenvolvimento, definiremos aqui os requisitos mínimos para geração e hospedagem do projeto.
+- Most importantly, we ask for your patience: the team must balance your request with many other responsibilities—fixing other bugs, answering other questions, new features, new documentation, etc.
 
 <br />
 
-### 5.1. Requerimentos mínimos
+## 3. Pull Request Guidelines
+
+- If adding a new feature:
+    - Provide a compelling reason for adding this feature. Ideally, you should open a suggestion issue first and get approval before working on it.
+    - Include tests for all added or modified code.
+    - Ensure all tests are passing.
+
+- If fixing a bug:
+    - If you're addressing a specific issue, add `(fix: #xxxx[,#xxx])` (#xxxx is the issue ID) in your PR title for better release logging, for example, `fix: update entity encoding/decoding (fix #3899)`.
+    - Provide a detailed description of the bug in the PR.
+
+<br />
+
+## 4. New Features and Security Vulnerabilities
+
+If you intend to propose a new feature, submit an issue to this repository.
+
+In the case of discovering a security vulnerability in `Via Cnt`, **DO NOT** publicly disclose it as an issue; instead, send a message to the email address [tiago.neitzke@yahoo.com](mailto:tiago.neitzke@yahoo.com) or [elivandro@hotmail.com.br](mailto:elivandro@hotmail.com.br). All security vulnerabilities will be addressed as quickly as possible.
+
+<br />
+
+## 5. Development Setup
+
+`Via Cnt` is developed using Laravel 10.x version. The entire development environment can be easily created using `Laravel Sail`. This creates a standard environment where all developers will have the same versions of certain technologies on their workstations, avoiding potential problems due to version incompatibility.
+
+`Laravel Sail` as defined in its [documentation](https://laravel.com/docs/10.x/sail) has the following definition:
+
+> Laravel Sail is a lightweight command-line interface for interacting with Laravel's default Docker development environment. Sail provides an excellent starting point for building a Laravel application using PHP, MySQL, and Redis without requiring prior Docker experience.
+
+Consequently, to maintain compatibility between development environments, we will define here the minimum requirements for generating and hosting the project.
+
+<br />
+
+### 5.1. Minimum Requirements
 - PHP v8.1+;
-- Compositor v2.2.o;
-- NodeJs v20.5.1 ;
-- Npm v9.8.0 ;
+- Composer v2.2.o;
+- NodeJs v20.5.1;
+- Npm v9.8.0;
 - Docker v24.0.5;
 
 <br />
 
-### 5.2. Prepare o ambiente
-Primeiro, clone o repositório executando o seguinte comando:
+### 5.2. Set Up the Environment
+First, clone the repository by executing the following command:
+
+```bash
+$ git clone https://github.com/TiagoLemosNeitzke/gerencie_mei.git
+
+```
+### 5.2. Set up the environment
+First, clone the repository by executing the following command:
 
 ```bash
 $ git clone https://github.com/TiagoLemosNeitzke/gerencie_mei.git
 ```
 
-Após clonar o repositório, entre na pasta do projeto e execute:
+After cloning the repository, access the project folder and execute the following command:
 
 ```bash
 $ ./sail config
 ```
 
-📝 Observação
-> Caso esteja executando o projeto pela primeira vez, é necessário executar o comando acima para que as dependências composer e npm sejam instaladas corretamente. Além disso, este comando criará um arquivo .env para você (se ainda não existir) com base no arquivo .env.example.
+📝 Note
+> This command will create the `.env` file and configure the environment variables for the project.
 
-<br />
 
-### 5.3. Crie o ambiente
-Depois que todas as dependências `composer` e `npm` estiverem instaladas, crie efetivamente o ambiente de desenvolvimento do Docker com o comando abaixo:
+📝 Observation
+> If you are running the project for the first time, it's necessary to execute the above command so that composer and npm dependencies are installed correctly. Additionally, this command will create an .env file for you (if it doesn't already exist) based on the .env.example file.
+
+```bash
+cp .env.example .env
+
+docker run --rm     
+-u "$(id -u):$(id -g)"     
+-v "$(pwd):/var/www/html"     
+-w /var/www/html     
+laravelsail/php82-composer:latest     
+composer install --ignore-platform-reqs
+
+npm install
+```
+
+### 5.3. Create the Environment
+Once all `composer` and `npm` dependencies have been installed, we can create the environment by executing the following command:
 
 ```bash
 $ ./sail init
 ```
 
-Este comando iniciará o download de todas as imagens do Docker necessárias para criar todo o ambiente de desenvolvimento estabelecido pela equipe do Laravel.
+📝 Note
+> This command will download all Docker images and create all containers necessary for the project to work.
 
-📝 Observação
-> Caso as imagens do Docker já existam em sua estação de trabalho, seu download será ignorado e se o Dockerfile da imagem do aplicativo for alterado, este comando irá reconstruir a imagem antes de executar o container.
+📝 Observation:
+>If the Docker images already exist on your workstation, their download will be skipped. If the Dockerfile of the application image is altered, this command will rebuild the image before running the container.
 
-Após o download de todas as imagens do Docker, todos os contêineres serão iniciados, encerrando assim o ciclo de criação do ambiente de desenvolvimento.
+After downloading all Docker images, all containers will be started, thus concluding the creation cycle of the development environment.
 
 <br />
 
-### 5.4. Ativos de construção
-Agora que o ambiente de desenvolvimento foi construído, precisamos compilar os assets para que (`estilos, scripts, etc`) sejam manipulados e publicados. Para fazer isso, basta executar o seguinte comando:
+### 5.4. Building Assets
+To build the assets, execute the following command:
 
 ```bash
 $ ./sail npm run dev
@@ -124,20 +150,10 @@ $ ./sail npm run dev
 
 <br />
 
-## 6. Abra o aplicativo no navegador
-Com tudo resolvido, definitivamente chegou a hora de ver o aplicativo funcionando, para isso acesse a url `http://localhost:${APP_PORT}` no seu navegador favorito.
+## 6. Open Application in Browser
+With everything set up, it's finally time to see the application in action. To do this, access the URL http://localhost:${APP_PORT} in your favorite browser.
 
-📝 Observação
-> Onde ${APP_PORT} deve ser substituído pelo número da porta informado em seu arquivo '.env', caso não tenha informado um número de porta, a porta padrão utilizada será `80`.
+📝 Observation:
+>Where ${APP_PORT} should be replaced by the port number specified in your '.env' file. If you haven't specified a port number, the default port used will be 80.
 
 <br />
-
-## 7. Testes
-
-Gerencie Mei` usa [Pest](https://pestphp.com/) PHP Test Framework.
-
-Para executar os testes, execute o comando:
-
-```bash
-$ ./sail test
-```
