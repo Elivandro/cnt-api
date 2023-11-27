@@ -12,22 +12,24 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans antialiased overflow-x-hidden">
-<div id="app">
+<body class="bg-gray-100 font-sans antialiased overflow-x-hidden"
+      x-data="{
+            open : true,
+            show : false,
+            contact : false,
+            donation : false
+            }"
+>
+
     <header class="bg-gray-900 py-6">
         <div class="container mx-auto w-full lg:w-10/12 flex justify-between items-center px-4">
             <h1 class="lg:text-3xl font-bold text-green-500">Documentação da API Viacnt</h1>
         </div>
     </header>
 
-    <main class="container mx-auto py-12">
-        <div class="flex flex-col lg:flex-row w-full lg:w-10/12 justify-center" x-data="{
-            open : true,
-            show : false,
-            contact : false,
-            donation : false
-            }">
-            <nav class="w-10/12 mx-auto lg:w-1/4 px-4 py-8">
+    <main class="container mx-auto lg:py-12">
+        <div class="flex flex-col lg:flex-row w-full lg:w-10/12 justify-center">
+            <nav class="w-10/12 mx-auto lg:w-1/4 px-4 py-8 float">
                 <ul class="flex lg:block justify-between">
                     <li class="mb-2">
                         <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
@@ -310,13 +312,15 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 flex flex-col py-6 text-center text-gray-300 fixed bottom-0 w-full">
-        <p></p>
-        <p>&copy; {{date_format(now(), 'Y')}} API Viacnt. Todos os direitos reservados.</p>
-        <p class="text-sm mt-4">
-            Não distribuímos ou comercializamos bases de dados.
-        </p>
+    <footer class="bg-gray-900 flex justify-center py-6 text-center text-gray-300 w-full"
+            :class="{'fixed bottom-0' : contact || donation} ">
+        <div class="flex flex-col">
+            <p>&copy; {{date_format(now(), 'Y')}} API Viacnt. Todos os direitos reservados.</p>
+            <p class="text-sm mt-4">
+                Não distribuímos ou comercializamos bases de dados.
+            </p>
+        </div>
     </footer>
-</div>
+
 </body>
 </html>
