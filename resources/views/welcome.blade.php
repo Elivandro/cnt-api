@@ -102,7 +102,29 @@
                                 title="Link do Repositório no GitHub" target="_blank"
                                 href="https://github.com/Elivandro/cnt-api/blob/main/README.md"
                                 class="text-blue-500 hover:underline">Link
-                                para o repositório no GitHub </a></p>
+                                para o repositório no GitHub </a>
+                        </p>
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-2">Aviso Legal</h2>
+                            <p class="mb-4">A API Viacnt é uma ferramenta para consulta de informações relacionadas aos
+                                CNAEs (Códigos Nacionais de Atividade Econômica), desenvolvida com o intuito de fornecer
+                                dados precisos e confiáveis. No entanto, é importante salientar que:</p>
+
+                            <p class="mb-4">A utilização dos dados fornecidos pela API Viacnt é de responsabilidade do
+                                usuário. Não nos responsabilizamos por quaisquer erros, omissões, imprecisões ou
+                                preenchimento incorreto dos dados por parte do usuário durante a emissão de notas
+                                fiscais ou em outros processos.</p>
+
+                            <p class="mb-4">Apesar de nossos esforços para manter a precisão e atualização dos dados,
+                                não garantimos a exatidão, integridade ou adequação das informações fornecidas pela API
+                                Viacnt. Os dados fornecidos pela API são para fins informativos e não devem ser
+                                considerados como aconselhamento legal ou financeiro.</p>
+
+                            <p class="text-sm italic">Este aviso legal é uma precaução necessária para proteger tanto os
+                                usuários quanto os desenvolvedores da API Viacnt. Recomendamos que os usuários
+                                verifiquem e validem as informações antes de utilizá-las para quaisquer fins comerciais
+                                ou legais.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -269,13 +291,14 @@
 
                         <div class="flex justify-between items-center mb-6">
                             <div class="w-1/2">
+                                {{--os dados abaixo precisam ser mudados--}}
                                 <h3 class="text-xl font-semibold mb-2">Dados para PIX</h3>
-                                <p class="mb-1"><span class="font-semibold">Chave PIX:</span> doacoes@exemplo.com</p>
-                                <p><span class="font-semibold">Nome do destinatário:</span> API Viacnt</p>
+                                <p class="mb-1"><span class="font-semibold">Chave PIX:</span> tl.neitzke@homail.com</p>
+                                <p><span class="font-semibold">Nome do destinatário:</span> Tiago Lemos Neitzke</p>
                             </div>
                             <div class="w-1/2 text-right">
-                                <!-- Substitua o link da imagem pelo QR Code gerado para o PIX -->
-                                <img src="seu-link-do-qrcode-pix" alt="QR Code PIX" class="w-32 h-32 object-cover">
+                                <img src="{{asset('assets/qr-code.png')}}" alt="QR Code PIX"
+                                     class="w-32 h-32 object-cover">
                             </div>
                         </div>
 
