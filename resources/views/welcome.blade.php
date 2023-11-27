@@ -18,7 +18,7 @@
         <div class="container mx-auto w-full lg:w-10/12 flex justify-between items-center px-4">
             <h1 class="lg:text-3xl font-bold text-green-500">Documentação da API Viacnt</h1>
             <nav>
-                <a href="#" class="text-gray-300 hover:text-gray-100 px-4">Contato</a>
+                <a href="{{ route('contato') }}" class="text-gray-300 hover:text-gray-100 px-4">Contato</a>
             </nav>
         </div>
     </header>
@@ -26,20 +26,28 @@
     <main class="container mx-auto py-12">
         <div class="flex flex-col lg:flex-row w-full lg:w-10/12 justify-center" x-data="{
             open : true,
-            show : false
+            show : false,
+            contact : false
             }">
             <nav class="w-10/12 mx-auto lg:w-1/4 px-4 py-8">
                 <ul class="flex lg:block justify-between">
                     <li class="mb-2">
                         <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': open}" @click="open = true; show = false">
+                           :class="{'text-green-500': open}" @click="open = true; show = false; contact = false">
                             Início
                         </a>
                     </li>
+
                     <li class="mb-2">
                         <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': show}" @click="show = true; open = false"
+                           :class="{'text-green-500': show}" @click="show = true; open = false; contact = false"
                         >Endpoint</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                           :class="{'text-green-500': contact}" @click="show = false; open = false; contact = true"
+                        >Contato</a>
                     </li>
 
                 </ul>
@@ -193,7 +201,53 @@
 </code></pre>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="contact">
 
+                <div class="container mx-auto py-8">
+                    <h1 class="text-4xl font-bold mb-4 text-green-500">Documentação da API Viacnt</h1>
+
+                    <div class="bg-white shadow p-6 rounded">
+                        <h2 class="text-2xl font-semibold mb-2">Contato</h2>
+                        <p class="mb-4">Fique à vontade para entrar em contato conosco se tiver alguma dúvida, sugestão
+                            ou solicitação. Estamos aqui para ajudar!</p>
+
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2">Tiago</h3>
+                            <p class="mb-1"><span class="font-semibold">E-mail:</span> <a
+                                    href="mailto:tiago.neitzke@yhaoo.com" class="text-blue-500 hover:underline"
+                                    target="_blank" title="Email do Tiago">tiago.neitzke@yahoo.com</a></p>
+                            <p class="mb-1"><span class="font-semibold">Telefone:</span> <a
+                                    href="https://wa.me/5567999082296" class="text-blue-500 hover:underline"
+                                    target="_blank" title="Whatsapp do Tiago">+55 (67) 9 9908-2296</a></p>
+                            <p class="mb-1"><span class="font-semibold">GitHub:</span> <a
+                                    href=https://github.com/TiagoLemosNeitzke" class="text-blue-500 hover:underline"
+                                    target="_blank" title="Github do Tiago">GitHub</a></p>
+                            <p><span class="font-semibold">LinkedIn:</span> <a
+                                    href="https://www.linkedin.com/in/tiago-lemos-neitzke/"
+                                    class="text-blue-500 hover:underline" target="_blank" title="Linkedin do Tiago">LinkedIn
+                                    do Tiago</a></p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Elivandro</h3>
+                            <p class="mb-1"><span class="font-semibold">E-mail:</span> <a
+                                    href="mailto:elivandro@hotmail.com.br" class="text-blue-500 hover:underline"
+                                    target="_blank" title="Email do Elivandro">elivandro@exemplo.com</a></p>
+                            <p class="mb-1"><span class="font-semibold">Telefone:</span> <a
+                                    href="https://wa.me/5569999076818" class="text-blue-500 hover:underline"
+                                    target="_blank" title="Whatsapp do Elivandro">+987654321</a></p>
+                            <p class="mb-1"><span class="font-semibold">GitHub:</span> <a
+                                    href="https://github.com/Elivandro" class="text-blue-500 hover:underline"
+                                    target="_blank" title="Github do Elivandro">GitHub do Elivandro</a></p>
+                            <p><span class="font-semibold">LinkedIn:</span> <a
+                                    href="https://www.linkedin.com/in/elivandroeas/"
+                                    class="text-blue-500 hover:underline" target="_blank" title="Linkedin do Elivandro">LinkedIn
+                                    do Elivandro</a></p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
