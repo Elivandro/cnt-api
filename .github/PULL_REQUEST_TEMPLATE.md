@@ -1,35 +1,31 @@
-<!-- PULL SOLICITAÇÃO MODELO -->
-<!-- (Atualize "[ ]" para "[x]" para marcar uma caixa) -->
+### What kind of change does this PR introduce? (check at least one)
 
-**Que tipo de mudança este PR introduz?** (marque pelo menos uma)
+- [ ] Bug fix
+- [ ] Feature
+- [ ] Documentation
+- [ ] Code style update
+- [ ] Refactoring
+- [ ] Build-related changes
+- [ ] Other: [describe]
 
-- [ ] correção de bug
-- [ ] Recurso
-- [ ] Documentação
-- [ ] Atualização de estilo de código
-- [ ] refatorar
-- [ ] Alterações relacionadas à compilação
-- [ ] Outro, descreva:
+### Does this PR introduce a significant change to the system? (check one)
 
-**Este PR introduz uma mudança significativa no sistema?** (marque uma)
+- [ ] Yes
+- [ ] No
 
-- [ ] Sim
-- [ ] Não
+If yes, describe the impact and the migration path for existing applications:
 
-Em caso afirmativo, descreva o impacto e o caminho de migração para os aplicativos existentes:
+### PR Checklist:
 
-**O PR cumpre estes requisitos:**
+- [ ] If solving a specific issue, it is referenced in the PR title (e.g., fix: #xxx[,#xxx], where "xxx" is the issue
+  number)
+- [ ] The proposed code here has been covered by tests.
+- [ ] Any necessary documentation has been added or updated in the docs or explained in the PR description.
 
-- [ ] Ao resolver um problema específico, ele é referenciado no título do PR (por exemplo, `fix: #xxx[,#xxx]`, onde "
-  xxx" é o número do problema)
-- [ ] O código proposto aqui foi coberto por testes.
-- [ ] Qualquer documentação necessária foi adicionada ou
-  atualizada [nos documentos](https://github.com/TiagoLemosNeitzke/gerencie_mei/docs) ou explicada na descrição do PR.
+If adding a new feature:
 
-Se adicionar um **novo recurso (Feature)**, a descrição do PR inclui:
+- [ ] The PR description includes a compelling reason for adding this feature (to avoid wasting time, it's better to
+  open a suggestion issue first and wait for approval before working on it).
+- [ ] This feature has been discussed with the team and is on the team's task list.
 
-- [ ] Um motivo convincente para adicionar esse recurso (para evitar perda de tempo, é melhor abrir um issue de sugestão
-  primeiro e aguardar a aprovação antes de trabalhar nele)
-- [ ] Este recurso foi discutido com o time e pertence a lista de tarefas da equipe.
-
-**Outra informação:**
+### Additional Information:
