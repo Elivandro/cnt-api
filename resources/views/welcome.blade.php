@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="ViaCnt api grátis e open source para consulta de Código de Tributação Nacional. Envie uma Requisição get com o código CNAE para obter o CNT correspondete.">
+    <meta name="robots" content="index, nofollow">
 
-    <title>Sua API Viacnt</title>
+    <title>Viacnt</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         [x-cloak] {
             display: none !important;
         }
+
+        html, body {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-<body class="bg-gray-100 font-sans antialiased overflow-x-hidden"
+<body class="bg-gray-100 font-sans antialiased overflow-x-hidden w-full"
       x-data="{
             open : true,
             show : false,
@@ -21,47 +28,45 @@
             }"
 >
 
-    <header class="bg-gray-900 py-6">
-        <div class="container mx-auto w-full lg:w-10/12 flex justify-between items-center px-4">
-            <h1 class="lg:text-3xl font-bold text-green-500">Documentação da API Viacnt</h1>
-        </div>
+<div class="flex flex-col lg:flex-row">
+    <header class="lg:h-full w-full lg:w-64">
+        <nav class="w-full mx-auto lg:w-1/4 px-4 py-8 flex lg:fixed lg:top-12 lg:left-4">
+            <ul class="flex justify-between lg:block justify-between w-full">
+                <li class="mb-2">
+                    <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                       :class="{'text-green-500': open}"
+                       @click="open = true; show = false; contact = false; donation = false">
+                        Início
+                    </a>
+                </li>
+
+                <li class="mb-2">
+                    <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                       :class="{'text-green-500': show}"
+                       @click="show = true; open = false; contact = false; donation = false"
+                    >Endpoint</a>
+                </li>
+
+                <li class="mb-2">
+                    <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                       :class="{'text-green-500': contact}"
+                       @click="show = false; open = false; contact = true; donation = false"
+                    >Contato</a>
+                </li>
+
+                <li class="mb-2">
+                    <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                       :class="{'text-green-500': donation}"
+                       @click="show = false; open = false; contact = false; donation = true"
+                    >Doações</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main class="container mx-auto lg:py-12">
-        <div class="flex flex-col lg:flex-row w-full lg:w-10/12 justify-center">
-            <nav class="w-10/12 mx-auto lg:w-1/4 px-4 py-8 float">
-                <ul class="flex lg:block justify-between">
-                    <li class="mb-2">
-                        <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': open}"
-                           @click="open = true; show = false; contact = false; donation = false">
-                            Início
-                        </a>
-                    </li>
 
-                    <li class="mb-2">
-                        <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': show}"
-                           @click="show = true; open = false; contact = false; donation = false"
-                        >Endpoint</a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': contact}"
-                           @click="show = false; open = false; contact = true; donation = false"
-                        >Contato</a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
-                           :class="{'text-green-500': donation}"
-                           @click="show = false; open = false; contact = false; donation = true"
-                        >Doações</a>
-                    </li>
-                </ul>
-            </nav>
-
+        <div class="border">
             <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="open">
 
                 <div class="container mx-auto">
@@ -130,8 +135,7 @@
                     </div>
                 </div>
             </section>
-
-            <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="show">
+            <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="show">
                 <div class="container mx-auto">
                     <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
 
@@ -147,98 +151,34 @@
                         <div class="bg-gray-200 rounded p-4 mb-4">
                             <p><span class="font-semibold">Endpoint: </span>
                                 GET
-                                <span class="text-xs lg:text-sm"> https://viacnt.com.br/api/v1/cnt/6201500</span>
+                                <a title="Veja um exemplo de resposta" target="_blank"
+                                   href="https://viacnt.com.br/api/v1/cnt/9511800"
+                                   class="text-sm lg:text-sm hover:text-blue-600 hover:underline">
+                                    https://viacnt.com.br/api/v1/cnt/9511800</a>
                         </div>
 
                         <h3 class="text-xl font-semibold mb-2">Resposta</h3>
                         <p class="mb-4">A resposta será um JSON contendo as informações do CNAE consultado, além dos
                             códigos CNT correspondentes a suas descrições associadas.</p>
 
-                        <div class="bg-gray-200 h-fit rounded p-4 space-y-2 lg:space-x-0 lg:hidden">
-                            <div class="text-sm lg:text-sm">
-
-                                {
-                                "cnae_code": "6201-5/00",
-                                "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-                                "cnt": "01.01",
-                                "cnt_description": "Análise e desenvolvimento de sistemas."
-                                },
-                            </div>
-                            <div class="text-sm lg:text-sm">
-                                {
-                                "cnae_code": "6201-5/00",
-                                "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-                                "cnt": "01.02",
-                                "cnt_description": "Programação."
-                                },
-                            </div>
-                            <div class="text-sm lg:text-sm">
-                                {
-                                "cnae_code": "6201-5/00",
-                                "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-                                "cnt": "01.03",
-                                "cnt_description": "Processamento de dados e congêneres."
-                                },
-                            </div>
-                            <div class="text-sm lg:text-sm">
-                                {
-                                "cnae_code": "6201-5/00",
-                                "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-                                "cnt": "01.04",
-                                "cnt_description": "Elaboração de programas de computadores, inclusive de jogos
-                                eletrônicos."
-                                },
-                            </div>
-                            <div class="text-sm lg:text-sm">
-                                {
-                                "cnae_code": "6201-5/00",
-                                "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-                                "cnt": "01.08",
-                                "cnt_description": "Planejamento, confecção, manutenção e atualização de páginas
-                                eletrônicas."
-                                }
-                            </div>
                         </div>
-                        <div class="bg-gray-200 rounded p-4 hidden lg:block">
-                <pre><code class="text-sm">  {
-            "cnae_code": "6201-5/00",
-            "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-            "cnt": "01.01",
-            "cnt_description": "Análise e desenvolvimento de sistemas."
-      },
-      {
-            "cnae_code": "6201-5/00",
-            "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-            "cnt": "01.02",
-            "cnt_description": "Programação."
-      },
-      {
-            "cnae_code": "6201-5/00",
-            "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-            "cnt": "01.03",
-            "cnt_description": "Processamento de dados e congêneres."
-      },
-      {
-            "cnae_code": "6201-5/00",
-            "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-            "cnt": "01.04",
-            "cnt_description": "Elaboração de programas de computadores, inclusive de jogos eletrônicos."
-      },
-      {
-            "cnae_code": "6201-5/00",
-            "cnae_description": "Desenvolvimento de programas de computador sob encomenda",
-            "cnt": "01.08",
-            "cnt_description": "Planejamento, confecção, manutenção e atualização de páginas eletrônicas."
-}
-</code></pre>
+                    <div class="bg-gray-200 rounded p-4">
+                        <code class="text-sm"> {
+                            "cnae_code": "9511-8/00",
+                            "cnae_description": "Reparação e manutenção de computadores e de equipamentos periféricos",
+                            "cnt": "14.02",
+                            "cnt_description": "Assistência técnica."
+                            }
+
+                        </code>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="contact">
 
-                <div class="container mx-auto py-8">
-                    <h1 class="text-4xl font-bold mb-4 text-green-500">Documentação da API Viacnt</h1>
+            </section>
+            <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="contact">
+
+                <div class="container mx-auto">
+                    <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
 
                     <div class="bg-white shadow p-6 rounded">
                         <h2 class="text-2xl font-semibold mb-2">Contato</h2>
@@ -281,10 +221,10 @@
                     </div>
                 </div>
             </section>
-            <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="donation">
+            <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="donation">
 
-                <div class="container mx-auto py-8">
-                    <h1 class="text-4xl font-bold mb-4 text-green-500">Documentação da API Viacnt</h1>
+                <div class="container mx-auto">
+                    <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
 
                     <div class="bg-white shadow p-6 rounded">
                         <h2 class="text-2xl font-semibold mb-2">Faça uma doação</h2>
@@ -311,16 +251,16 @@
             </section>
         </div>
     </main>
+</div>
 
-    <footer class="bg-gray-900 flex justify-center py-6 text-center text-gray-300 w-full"
-            :class="{'fixed bottom-0' : contact || donation} ">
-        <div class="flex flex-col">
-            <p>&copy; {{date_format(now(), 'Y')}} API Viacnt. Todos os direitos reservados.</p>
-            <p class="text-sm mt-4">
-                Não distribuímos ou comercializamos bases de dados.
-            </p>
-        </div>
-    </footer>
+<footer class="bg-gray-900 flex justify-center py-6 text-center text-gray-300 w-full">
+    <div class="flex flex-col">
+        <p>&copy; {{date_format(now(), 'Y')}} API Viacnt. Todos os direitos reservados.</p>
+        <p class="text-sm mt-4">
+            Não distribuímos ou comercializamos bases de dados.
+        </p>
+    </div>
+</footer>
 
 </body>
 </html>
