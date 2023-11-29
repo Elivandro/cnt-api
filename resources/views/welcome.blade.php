@@ -127,6 +127,14 @@
                                 Viacnt. Os dados fornecidos pela API são para fins informativos e não devem ser
                                 considerados como aconselhamento legal ou financeiro.</p>
 
+                            <p class="mb-4">Licença MIT: Esta licença permissiva permite o uso, cópia, modificação,
+                                distribuição e sublicenciamento do software, desde que o aviso de copyright e a licença
+                                sejam incluídos em todas as cópias ou partes substanciais do software.
+                            </p>
+                            <p class="mb-4">
+                                Uso Adequado: Os usuários são encorajados a verificar e validar as informações obtidas
+                                pela API antes de utilizá-las para fins comerciais ou legais.</p>
+
                             <p class="text-sm italic">Este aviso legal é uma precaução necessária para proteger tanto os
                                 usuários quanto os desenvolvedores da API Viacnt. Recomendamos que os usuários
                                 verifiquem e validem as informações antes de utilizá-las para quaisquer fins comerciais
@@ -135,7 +143,8 @@
                     </div>
                 </div>
             </section>
-            <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="show">
+            <section class="w-full h-full lg:h-screen mb-24 lg:mb-0 mx-auto bg-white p-8 shadow rounded h-screen"
+                     x-cloak x-show="show">
                 <div class="container mx-auto">
                     <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
 
@@ -161,18 +170,19 @@
                         <p class="mb-4">A resposta será um JSON contendo as informações do CNAE consultado, além dos
                             códigos CNT correspondentes a suas descrições associadas.</p>
 
-                        </div>
+                    </div>
                     <div class="bg-gray-200 rounded p-4">
-                        <code class="text-sm"> {
-                            "cnae_code": "9511-8/00",
+                        <code class="text-sm"> { <br>
+                            "cnae_code": "9511-8/00", <br>
                             "cnae_description": "Reparação e manutenção de computadores e de equipamentos periféricos",
-                            "cnt": "14.02",
-                            "cnt_description": "Assistência técnica."
+                            <br>
+                            "cnt": "14.02", <br>
+                            "cnt_description": "Assistência técnica." <br>
                             }
 
                         </code>
-                        </div>
                     </div>
+                </div>
 
             </section>
             <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="contact">
@@ -231,14 +241,14 @@
                         <p class="mb-4">Se você gostou do nosso trabalho e deseja contribuir, estamos abertos a doações
                             via PIX. Agradecemos seu apoio!</p>
 
-                        <div class="flex justify-between items-center mb-6">
-                            <div class="w-1/2">
+                        <div class="flex flex-col lg:flex-row justify-between items-center mb-6">
+                            <div class="w-full lg:w-1/2">
                                 {{--os dados abaixo precisam ser mudados--}}
                                 <h3 class="text-xl font-semibold mb-2">Dados para PIX</h3>
                                 <p class="mb-1"><span class="font-semibold">Chave PIX:</span> tl.neitzke@homail.com</p>
                                 <p><span class="font-semibold">Nome do destinatário:</span> Tiago Lemos Neitzke</p>
                             </div>
-                            <div class="w-1/2 text-right">
+                            <div class="w-full mt-4 lg:mt-0 lg:w-1/2 flex justify-center lg:text-right">
                                 <img src="{{asset('assets/qr-code.png')}}" alt="QR Code PIX"
                                      class="w-32 h-32 object-cover">
                             </div>
@@ -255,7 +265,7 @@
 
 <footer class="bg-gray-900 flex justify-center py-6 text-center text-gray-300 w-full">
     <div class="flex flex-col">
-        <p>&copy; {{date_format(now(), 'Y')}} API Viacnt. Todos os direitos reservados.</p>
+        <p>&copy; {{date_format(now(), 'Y')}} API Viacnt. Esta Api é open source e possui licença MIT.</p>
         <p class="text-sm mt-4">
             Não distribuímos ou comercializamos bases de dados.
         </p>
