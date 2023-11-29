@@ -265,7 +265,7 @@
 
 <footer class="bg-gray-900 flex justify-center py-6 text-center text-gray-300 w-full">
     <div class="flex flex-col">
-        <p class="text-sm">&copy; {{date_format(now(), 'Y')}} API Viacnt. Esta Api é um projeto open source sob a
+        <p class="text-sm">{{date_format(now(), 'Y')}} API Viacnt. Esta Api é um projeto open source sob a
             licença MIT.</p>
         <p class="text-sm mt-4">
             Não distribuímos ou comercializamos bases de dados.
