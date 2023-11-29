@@ -194,7 +194,7 @@
                                     href="https://wa.me/5567999082296" class="text-blue-500 hover:underline"
                                     target="_blank" title="Whatsapp do Tiago">+55 (67) 9 9908-2296</a></p>
                             <p class="mb-1"><span class="font-semibold">GitHub:</span> <a
-                                    href=https://github.com/TiagoLemosNeitzke" class="text-blue-500 hover:underline"
+                                    href="https://github.com/TiagoLemosNeitzke" class="text-blue-500 hover:underline"
                                     target="_blank" title="Github do Tiago">GitHub</a></p>
                             <p><span class="font-semibold">LinkedIn:</span> <a
                                     href="https://www.linkedin.com/in/tiago-lemos-neitzke/"
