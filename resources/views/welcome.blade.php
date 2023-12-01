@@ -67,6 +67,7 @@
     <main class="container mx-auto lg:py-12">
 
         <div class="border">
+            {{--home section--}}
             <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="open">
 
                 <div class="container mx-auto">
@@ -143,7 +144,8 @@
                     </div>
                 </div>
             </section>
-            <section class="w-full lg:h-screen mb-24 lg:mb-0 mx-auto bg-white p-8 shadow rounded h-screen"
+            {{--endpoint section--}}
+            <section class="w-full mx-auto bg-white p-8 shadow rounded lg:h-screen"
                      x-cloak x-show="show">
                 <div class="container mx-auto">
                     <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
@@ -185,6 +187,7 @@
                 </div>
 
             </section>
+            {{--contact section--}}
             <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="contact">
 
                 <div class="container mx-auto">
@@ -231,6 +234,7 @@
                     </div>
                 </div>
             </section>
+            {{--donation section--}}
             <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="donation">
 
                 <div class="container mx-auto">
@@ -241,7 +245,7 @@
                         <p class="mb-4">Se você gostou do nosso trabalho e deseja contribuir, estamos abertos a doações. Agradecemos seu apoio!</p>
 
                         <div class="flex flex-col lg:flex-row justify-between items-center mb-6">
-                            
+
                             <div class="w-full mt-4 lg:mt-0 lg:w-1/2 flex justify-start gap-6 lg:text-right">
                                 <div>
                                     <h3 class="text-lg font-semibold mb-2">Opções para doar:</h3>
@@ -295,7 +299,7 @@
                                                             </svg>
                                                         </button>
                                                     </div>
-                                                    
+
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
                                                         <div class="flex items-center flex-col space-y-4">
@@ -378,7 +382,7 @@
                                                             </svg>
                                                         </button>
                                                     </div>
-                                                    
+
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
                                                         <div class="flex items-center flex-col space-y-4">
@@ -405,7 +409,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    
+
 
                                         <!-- component -->
                                         <div x-data="{ eth: false }"
@@ -434,7 +438,8 @@
                                             <!-- Trigger button -->
                                             <button x-on:click="eth = true" class="transition duration-300">
                                                 {{-- eth --}}
-                                                <svg xmlns="http://www.w3.org/2000/svg " width="36 " height="36 " viewBox="0 0 32 32 ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="36 " height="36 "
+                                                     viewBox="0 0 32 32 ">
                                                     <g fill="none " fill-rule="evenodd ">
                                                         <ellipse cx="16 " cy="16 " fill="#6F7CBA " rx="16 " ry="16 "></ellipse>
                                                         <path fill="#FFF " d="M10.13 17.76c-.1-.15-.06-.2.09-.12l5.49 3.09c.15.08.4.08.56 0l5.58-3.08c.16-.08.2-.03.1.11L16.2 25.9c-.1.15-.28.15-.38 0l-5.7-8.13zm.04-2.03a.3.3 0 0 1-.13-.42l5.74-9.2c.1-.15.25-.15.34 0l5.77 9.19c.1.14.05.33-.12.41l-5.5 2.78a.73.73 0 0 1-.6 0l-5.5-2.76z" />
@@ -455,7 +460,7 @@
                                                             </svg>
                                                         </button>
                                                     </div>
-                                                    
+
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
                                                         <div class="flex flex-col space-y-4">
@@ -468,8 +473,8 @@
                                                     <!-- Additional Information -->
                                                     <div class="mt-6 text-sm text-gray-500">
                                                         <div x-data="{ input: '0x5B8E3810ab3f528938a63AF3CeA33914e7A87f9b', showMsg: false }" >
-                    
-                                                            <div class="w-full h-full overflow-hidden">
+
+                                                        <div class="w-full h-full overflow-hidden">
 
                                                                 <a type="button" x-on:click="navigator.clipboard.writeText(input), showMsg = true, setTimeout(() => showMsg = false, 1000)" class="group inline-flex w-full items-center justify-center px-5 text-sm font-normal text-center text-black border-t border-purple-50 hover:bg-purple-50 truncate rounded-b cursor-copy">
 
@@ -499,7 +504,7 @@
 </div>
 
 <footer class="bg-gray-900 flex justify-center py-6 text-center text-gray-300 w-full">
-    <div class="flex flex-col">
+    <div class="flex flex-col w-10/12">
         <p class="text-sm">&copy; {{date_format(now(), 'Y')}} API Viacnt. Esta Api é um projeto open source sob a
             licença MIT.</p>
         <p class="text-sm mt-4">
