@@ -67,6 +67,7 @@
     <main class="container mx-auto lg:py-12">
 
         <div class="border">
+            {{--home section--}}
             <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="open">
 
                 <div class="container mx-auto">
@@ -143,7 +144,8 @@
                     </div>
                 </div>
             </section>
-            <section class="w-full lg:h-screen mb-24 lg:mb-0 mx-auto bg-white p-8 shadow rounded h-screen"
+            {{--endpoint section--}}
+            <section class="w-full mx-auto bg-white p-8 shadow rounded lg:h-screen"
                      x-cloak x-show="show">
                 <div class="container mx-auto">
                     <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
@@ -185,6 +187,7 @@
                 </div>
 
             </section>
+            {{--contact section--}}
             <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="contact">
 
                 <div class="container mx-auto">
@@ -231,6 +234,7 @@
                     </div>
                 </div>
             </section>
+            {{--donation section--}}
             <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="donation">
 
                 <div class="container mx-auto">
@@ -241,7 +245,7 @@
                         <p class="mb-4">Se você gostou do nosso trabalho e deseja contribuir, estamos abertos a doações. Agradecemos seu apoio!</p>
 
                         <div class="flex flex-col lg:flex-row justify-between items-center mb-6">
-                            
+
                             <div class="w-full mt-4 lg:mt-0 lg:w-1/2 flex justify-start gap-6 lg:text-right">
                                 <div>
                                     <h3 class="text-lg font-semibold mb-2">Opções para doar:</h3>
@@ -295,7 +299,7 @@
                                                             </svg>
                                                         </button>
                                                     </div>
-                                                    
+
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
                                                         <div class="flex items-center flex-col space-y-4">
@@ -378,7 +382,7 @@
                                                             </svg>
                                                         </button>
                                                     </div>
-                                                    
+
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
                                                         <div class="flex items-center flex-col space-y-4">
@@ -405,7 +409,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    
+
 
                                         <!-- component -->
                                         <div x-data="{ eth: false }"
@@ -455,7 +459,7 @@
                                                             </svg>
                                                         </button>
                                                     </div>
-                                                    
+
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
                                                         <div class="flex flex-col space-y-4">
@@ -468,8 +472,8 @@
                                                     <!-- Additional Information -->
                                                     <div class="mt-6 text-sm text-gray-500">
                                                         <div x-data="{ input: '0x5B8E3810ab3f528938a63AF3CeA33914e7A87f9b', showMsg: false }" >
-                    
-                                                            <div class="w-full h-full overflow-hidden">
+
+                                                        <div class="w-full h-full overflow-hidden">
 
                                                                 <a type="button" x-on:click="navigator.clipboard.writeText(input), showMsg = true, setTimeout(() => showMsg = false, 1000)" class="group inline-flex w-full items-center justify-center px-5 text-sm font-normal text-center text-black border-t border-purple-50 hover:bg-purple-50 truncate rounded-b cursor-copy">
 
