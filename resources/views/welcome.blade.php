@@ -503,7 +503,7 @@
 </div>
 
 <footer class="bg-gray-900 flex justify-center py-6 text-center text-gray-300 w-full">
-    <div class="flex flex-col">
+    <div class="flex flex-col w-10/12">
         <p class="text-sm">&copy; {{date_format(now(), 'Y')}} API Viacnt. Esta Api é um projeto open source sob a
             licença MIT.</p>
         <p class="text-sm mt-4">
