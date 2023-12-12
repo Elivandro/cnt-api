@@ -6,7 +6,7 @@ use App\Models\Cnae;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ShowRouteTest extends TestCase
+class CnaeTableTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -34,9 +34,5 @@ class ShowRouteTest extends TestCase
             'cnae_code' => '6201-5/00',
             'cnae_description' => 'Desenvolvimento de programas de computador sob encomenda'
         ]);
-
-        //$response = $this->get('http://localhost/api/v1/cnt/9511800');
-
-        //$response->assertStatus(200);
     }
 }
