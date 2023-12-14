@@ -12,7 +12,7 @@ class CnaeItemsTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function if_cnae_item_table_exists_and_persists_and_delete_datas(): void
+    public function check_cnae_item_table_exists_and_persists_and_delete_datas(): void
     {
         $this->withoutExceptionHandling();
 

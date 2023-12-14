@@ -11,7 +11,7 @@ class CnaeTableTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function test_if_table_cnae_exists_and_if_receive_datas_and_delete_datas(): void
+    public function check_if_table_cnae_exists_and_if_receive_datas_and_delete_datas(): void
     {
         $this->withoutExceptionHandling();
 
