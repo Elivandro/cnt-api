@@ -18,6 +18,19 @@
             scroll-behavior: smooth;
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4CLLCRJYR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-V4CLLCRJYR');
+    </script>
 </head>
 <body class="bg-gray-100 font-sans antialiased overflow-x-hidden w-full"
       x-data="{

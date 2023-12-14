@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cnae;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class CntController extends Controller
     {
         $cnae = preg_replace('/^(\d{4})(\d{1})(\d{2})$/', '$1-$2/$3', $cnae);
 
-        $cnae = \App\Models\Cnae::join('cnae_items', 'cnaes.id', '=', 'cnae_items.cnae_id')
+        $cnae = Cnae::join('cnae_items', 'cnaes.id', '=', 'cnae_items.cnae_id')
             ->where('cnae_code', $cnae)
             ->select('cnaes.cnae_code', 'cnaes.cnae_description', 'cnae_items.cnae_item as cnt', 'cnae_items.item_description as cnt_description')
             ->get();
