@@ -24,7 +24,8 @@ final class ComposerOutdated
             return;
         }
 
-        $outdated = Process::run('composer outdate -D -f json');
+        $outdated = Process::run('composer outdated -D -f json');
+
 
         $this->pulse->set('composer_outdated', 'output', $outdated->output());
     }
