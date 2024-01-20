@@ -15,7 +15,7 @@ final class ComposerOutdated
         //
     }
 
-    public function record(SharedBeat $event): void
+    public function record(): void
     {
 
         $outdated = Process::run('composer outdated -D -f json');
