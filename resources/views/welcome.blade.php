@@ -32,7 +32,7 @@
         gtag('config', 'G-V4CLLCRJYR');
     </script>
 </head>
-<body class="bg-gray-100 font-sans antialiased overflow-x-hidden w-full"
+<body class="w-full overflow-x-hidden font-sans antialiased bg-gray-100"
       x-data="{
             open : true,
             show : false,
@@ -42,11 +42,11 @@
 >
 
 <div class="flex flex-col lg:flex-row">
-    <header class="lg:h-full w-full lg:w-64">
-        <nav class="w-full mx-auto lg:w-1/4 px-4 py-8 flex lg:fixed lg:top-12 lg:left-4">
-            <ul class="flex justify-between lg:block w-full">
+    <header class="w-full lg:h-full lg:w-64">
+        <nav class="flex w-full px-4 py-8 mx-auto lg:w-1/4 lg:fixed lg:top-12 lg:left-4">
+            <ul class="flex justify-between w-full lg:block">
                 <li class="mb-2">
-                    <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                    <a href="#" class="block font-medium text-gray-800 hover:text-green-500"
                        :class="{'text-green-500': open}"
                        x-on:click="open = true; show = false; contact = false; donation = false">
                         Início
@@ -54,21 +54,21 @@
                 </li>
 
                 <li class="mb-2">
-                    <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                    <a href="#" class="block font-medium text-gray-800 hover:text-green-500"
                        :class="{'text-green-500': show}"
                        x-on:click="show = true; open = false; contact = false; donation = false"
                     >Endpoint</a>
                 </li>
 
                 <li class="mb-2">
-                    <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                    <a href="#" class="block font-medium text-gray-800 hover:text-green-500"
                        :class="{'text-green-500': contact}"
                        x-on:click="show = false; open = false; contact = true; donation = false"
                     >Contato</a>
                 </li>
 
                 <li class="mb-2">
-                    <a href="#" class="block text-gray-800 hover:text-green-500 font-medium"
+                    <a href="#" class="block font-medium text-gray-800 hover:text-green-500"
                        :class="{'text-green-500': donation}"
                        x-on:click="show = false; open = false; contact = false; donation = true"
                     >Doações</a>
@@ -81,23 +81,23 @@
 
         <div class="border">
             {{--home section--}}
-            <section class="w-full mx-auto bg-white p-8 shadow rounded" x-cloak x-show="open">
+            <section class="w-full p-8 mx-auto bg-white rounded shadow" x-cloak x-show="open">
 
                 <div class="container mx-auto">
-                    <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
+                    <h1 class="mb-4 text-4xl font-bold text-center text-green-500">Documentação da API Viacnt</h1>
 
-                    <div class="bg-white shadow p-6 rounded">
+                    <div class="p-6 bg-white rounded shadow">
                         <p class="mb-4">Bem-vindo à Documentação da API Viacnt! Nossa API foi desenvolvida para fornecer
                             acesso rápido e fácil às informações relacionadas aos CNAEs (Códigos Nacionais de Atividade
                             Econômica), permitindo que você obtenha detalhes específicos de cada CNAE a partir de
                             consultas simples.</p>
 
-                        <h2 class="text-2xl font-semibold mb-2">Descrição</h2>
+                        <h2 class="mb-2 text-2xl font-semibold">Descrição</h2>
                         <p class="mb-2">A API Viacnt é uma solução robusta e acessível para consultas de CNAEs,
                             projetada para simplificar a obtenção de informações detalhadas sobre atividades
                             econômicas.</p>
 
-                        <ul class="list-disc pl-8 mb-4">
+                        <ul class="pl-8 mb-4 list-disc">
                             <li><span class="font-semibold">Open Source:</span> A API Viacnt é um projeto open source,
                                 possibilitando melhorias contínuas e transparência no desenvolvimento.
                             </li>
@@ -112,13 +112,13 @@
                             </li>
                         </ul>
 
-                        <h2 class="text-2xl font-semibold mb-2">Uso Responsável</h2>
+                        <h2 class="mb-2 text-2xl font-semibold">Uso Responsável</h2>
                         <p class="mb-4">Solicitamos aos usuários que respeitem os limites de requisições para garantir
                             um serviço estável para todos os usuários. Incentivamos contribuições para aprimorar a API e
                             expandir suas funcionalidades. Por favor, caso encontre algum erro na base de dados abra uma
                             issue no github, ou entre em contato conosco.</p>
 
-                        <h2 class="text-2xl font-semibold mb-2">Links Úteis</h2>
+                        <h2 class="mb-2 text-2xl font-semibold">Links Úteis</h2>
                         <p class="mb-4"><span class="font-semibold">GitHub:</span> <a
                                 title="Link do Repositório no GitHub" target="_blank"
                                 href="https://github.com/Elivandro/cnt-api/blob/main/README.md"
@@ -126,7 +126,7 @@
                                 para o repositório no GitHub </a>
                         </p>
                         <div class="mb-8">
-                            <h2 class="text-2xl font-semibold mb-2">Aviso Legal</h2>
+                            <h2 class="mb-2 text-2xl font-semibold">Aviso Legal</h2>
                             <p class="mb-4">A API Viacnt é uma ferramenta para consulta de informações relacionadas aos
                                 CNAEs (Códigos Nacionais de Atividade Econômica), desenvolvida com o intuito de fornecer
                                 dados precisos e confiáveis. No entanto, é importante salientar que:</p>
@@ -158,21 +158,21 @@
                 </div>
             </section>
             {{--endpoint section--}}
-            <section class="w-full mx-auto bg-white p-8 shadow rounded lg:h-screen"
+            <section class="w-full p-8 mx-auto bg-white rounded shadow lg:h-screen"
                      x-cloak x-show="show">
                 <div class="container mx-auto">
-                    <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
+                    <h1 class="mb-4 text-4xl font-bold text-center text-green-500">Documentação da API Viacnt</h1>
 
-                    <div class="bg-white shadow p-6 rounded">
-                        <h2 class="text-2xl font-semibold mb-2">Uso da API - Consulta de CNAE</h2>
+                    <div class="p-6 bg-white rounded shadow">
+                        <h2 class="mb-2 text-2xl font-semibold">Uso da API - Consulta de CNAE</h2>
                         <p class="mb-4">A API Viacnt oferece um endpoint para consulta de informações relacionadas aos
                             CNAEs (Códigos Nacionais de Atividade Econômica).</p>
 
-                        <h3 class="text-xl font-semibold mb-2">Requisição</h3>
+                        <h3 class="mb-2 text-xl font-semibold">Requisição</h3>
                         <p class="mb-4">Para realizar uma consulta, envie uma requisição GET para o endpoint abaixo,
                             fornecendo o código CNAE desejado no formato de números:</p>
 
-                        <div class="bg-gray-200 rounded p-4 mb-4">
+                        <div class="p-4 mb-4 bg-gray-200 rounded">
                             <p><span class="font-semibold">Endpoint: </span>
                                 GET
                                 <a title="Veja um exemplo de resposta" target="_blank"
@@ -181,38 +181,41 @@
                                     https://viacnt.com.br/api/v1/cnt/9511800</a>
                         </div>
 
-                        <h3 class="text-xl font-semibold mb-2">Resposta</h3>
+                        <h3 class="mb-2 text-xl font-semibold">Resposta</h3>
                         <p class="mb-4">A resposta será um JSON contendo as informações do CNAE consultado, além dos
                             códigos CNT correspondentes a suas descrições associadas.</p>
 
-                        <div class="bg-gray-200 rounded p-4">
-                            <code class="text-sm"> { <br>
-                                "cnae_code": "9511-8/00", <br>
-                                "cnae_description": "Reparação e manutenção de computadores e de equipamentos periféricos",
-                                <br>
-                                "cnt": "14.02", <br>
-                                "cnt_description": "Assistência técnica." <br>
+                        <div class="w-full p-4 bg-gray-200 rounded">
+                            <span class="text-sm">
+                                {
+                                    <p class="ml-4">"cnae_code": "9511-8/00",</p>
+                                    <p class="ml-4">"cnae_description": "Reparação e manutenção de computadores e de equipamentos periféricos",</p>
+                                    <p class="ml-4">"cnt": [</p>
+                                        <p class="ml-12">{</p>
+                                            <p class="ml-16">"cnt_code": "14.02",</p>
+                                            <p class="ml-16">"cnt_description": "Assistência técnica."</p>
+                                        <p class="ml-12">}</p>
+                                    <p class="ml-4">]</p>
                                 }
-
-                            </code>
+                            </span>
                         </div>
                     </div>
                 </div>
 
             </section>
             {{--contact section--}}
-            <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="contact">
+            <section class="w-full h-screen p-8 mx-auto bg-white rounded shadow" x-cloak x-show="contact">
 
                 <div class="container mx-auto">
-                    <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
+                    <h1 class="mb-4 text-4xl font-bold text-center text-green-500">Documentação da API Viacnt</h1>
 
-                    <div class="bg-white shadow p-6 rounded">
-                        <h2 class="text-2xl font-semibold mb-2">Contato</h2>
+                    <div class="p-6 bg-white rounded shadow">
+                        <h2 class="mb-2 text-2xl font-semibold">Contato</h2>
                         <p class="mb-4">Fique à vontade para entrar em contato conosco se tiver alguma dúvida, sugestão
                             ou solicitação. Estamos aqui para ajudar!</p>
 
                         <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-2">Tiago</h3>
+                            <h3 class="mb-2 text-xl font-semibold">Tiago</h3>
                             <p class="mb-1"><span class="font-semibold">E-mail:</span> <a
                                     href="mailto:tiago.neitzke@yhaoo.com" class="text-blue-500 hover:underline"
                                     target="_blank" title="Email do Tiago">tiago.neitzke@yahoo.com</a></p>
@@ -229,7 +232,7 @@
                         </div>
 
                         <div>
-                            <h3 class="text-xl font-semibold mb-2">Elivandro</h3>
+                            <h3 class="mb-2 text-xl font-semibold">Elivandro</h3>
                             <p class="mb-1"><span class="font-semibold">E-mail:</span> <a
                                     href="mailto:elivandro@hotmail.com.br" class="text-blue-500 hover:underline"
                                     target="_blank" title="Email do Elivandro">elivandro@hotmail.com.br</a></p>
@@ -248,20 +251,20 @@
                 </div>
             </section>
             {{--donation section--}}
-            <section class="w-full mx-auto bg-white p-8 shadow rounded h-screen" x-cloak x-show="donation">
+            <section class="w-full h-screen p-8 mx-auto bg-white rounded shadow" x-cloak x-show="donation">
 
                 <div class="container mx-auto">
-                    <h1 class="text-4xl font-bold mb-4 text-green-500 text-center">Documentação da API Viacnt</h1>
+                    <h1 class="mb-4 text-4xl font-bold text-center text-green-500">Documentação da API Viacnt</h1>
 
-                    <div class="bg-white shadow p-6 rounded">
-                        <h2 class="text-2xl font-semibold mb-2">Faça uma doação</h2>
+                    <div class="p-6 bg-white rounded shadow">
+                        <h2 class="mb-2 text-2xl font-semibold">Faça uma doação</h2>
                         <p class="mb-4">Se você gostou do nosso trabalho e deseja contribuir, estamos abertos a doações. Agradecemos seu apoio!</p>
 
-                        <div class="flex flex-col lg:flex-row justify-between items-center mb-6">
+                        <div class="flex flex-col items-center justify-between mb-6 lg:flex-row">
 
-                            <div class="w-full mt-4 lg:mt-0 lg:w-1/2 flex justify-start gap-6 lg:text-right">
+                            <div class="flex justify-start w-full gap-6 mt-4 lg:mt-0 lg:w-1/2 lg:text-right">
                                 <div>
-                                    <h3 class="text-lg font-semibold mb-2">Opções para doar:</h3>
+                                    <h3 class="mb-2 text-lg font-semibold">Opções para doar:</h3>
                                     <div class="flex gap-2">
                                         <!-- component -->
                                         <div x-data="{ pix: false }"
@@ -300,10 +303,10 @@
                                             </button>
 
                                             <!-- Modal -->
-                                            <div x-show="pix" class="fixed inset-0 flex items-center justify-center z-50">
-                                                <div class="bg-white rounded-lg p-6 w-96 max-w-full shadow-lg transform transition-all duration-300" x-show.transition.opacity="pix">
+                                            <div x-show="pix" class="fixed inset-0 z-50 flex items-center justify-center">
+                                                <div class="max-w-full p-6 transition-all duration-300 transform bg-white rounded-lg shadow-lg w-96" x-show.transition.opacity="pix">
                                                     <!-- Modal Header -->
-                                                    <div class="flex justify-between items-center border-b-2 border-gray-200 pb-4">
+                                                    <div class="flex items-center justify-between pb-4 border-b-2 border-gray-200">
                                                         <h2 class="text-2xl font-semibold">Transferência pix</h2>
                                                         <button x-on:click="pix = false" class="text-gray-500 hover:text-gray-700 focus:outline-none">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
@@ -315,14 +318,14 @@
 
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
-                                                        <div class="flex items-center flex-col space-y-4">
-                                                            <img src="{{ asset('assets/pix-wallet.png')}}" class="w-32 h-32 object-cover" alt="pix wallet qr-code" />
+                                                        <div class="flex flex-col items-center space-y-4">
+                                                            <img src="{{ asset('assets/pix-wallet.png')}}" class="object-cover w-32 h-32" alt="pix wallet qr-code" />
                                                         </div>
                                                         <div class="w-full">
                                                             {{--os dados abaixo precisam ser mudados--}}
                                                             <p class="text-center">
                                                                 <span class="text-sm">Destinatário:</span>
-                                                                <span class="font-semibold text-sm">Tiago Lemos Neitzke</span>
+                                                                <span class="text-sm font-semibold">Tiago Lemos Neitzke</span>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -332,11 +335,11 @@
                                                         <div x-data="{ input: 'tl.neitzke@homail.com', showMsg: false }" >
                                                             <div class="w-full h-full overflow-hidden">
 
-                                                                <a type="button" x-on:click="navigator.clipboard.writeText(input), showMsg = true, setTimeout(() => showMsg = false, 1000)" class="group inline-flex w-full items-center justify-center px-5 text-sm font-normal text-center text-black border-t border-purple-50  hover:bg-purple-50 truncate rounded-b cursor-copy">
+                                                                <a type="button" x-on:click="navigator.clipboard.writeText(input), showMsg = true, setTimeout(() => showMsg = false, 1000)" class="inline-flex items-center justify-center w-full px-5 text-sm font-normal text-center text-black truncate border-t rounded-b group border-purple-50 hover:bg-purple-50 cursor-copy">
 
-                                                                <button id="clipboard" class="relative pl-1 py-4 cursor-copy text-xs font-medium">Copiar para o Clipboard</button>
-                                                                    <div x-show="showMsg" x-on:click.away="showMsg = false" class="fixed bottom-3 right-3 z-20 max-w-sm overflow-hidden bg-green-100 border border-green-300 rounded" style="display: none;">
-                                                                        <p class="p-3 flex items-center justify-center text-green-600">Copiado</p>
+                                                                <button id="clipboard" class="relative py-4 pl-1 text-xs font-medium cursor-copy">Copiar para o Clipboard</button>
+                                                                    <div x-show="showMsg" x-on:click.away="showMsg = false" class="fixed z-20 max-w-sm overflow-hidden bg-green-100 border border-green-300 rounded bottom-3 right-3" style="display: none;">
+                                                                        <p class="flex items-center justify-center p-3 text-green-600">Copiado</p>
                                                                     </div>
                                                                 </a>
 
@@ -383,10 +386,10 @@
                                             </button>
 
                                             <!-- Modal -->
-                                            <div x-show="btc" class="fixed inset-0 flex items-center justify-center z-50">
-                                                <div class="bg-white rounded-lg p-6 w-96 max-w-full shadow-lg transform transition-all duration-300" x-show.transition.opacity="btc">
+                                            <div x-show="btc" class="fixed inset-0 z-50 flex items-center justify-center">
+                                                <div class="max-w-full p-6 transition-all duration-300 transform bg-white rounded-lg shadow-lg w-96" x-show.transition.opacity="btc">
                                                     <!-- Modal Header -->
-                                                    <div class="flex justify-between items-center border-b-2 border-gray-200 pb-4">
+                                                    <div class="flex items-center justify-between pb-4 border-b-2 border-gray-200">
                                                         <h2 class="text-2xl font-semibold">Carteira Bitcoin</h2>
                                                         <button x-on:click="btc = false" class="text-gray-500 hover:text-gray-700 focus:outline-none">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
@@ -398,8 +401,8 @@
 
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
-                                                        <div class="flex items-center flex-col space-y-4">
-                                                            <img src="{{ asset('assets/btc-wallet.png')}}" class="w-32 h-32 object-cover" alt="btc wallet qr-code" />
+                                                        <div class="flex flex-col items-center space-y-4">
+                                                            <img src="{{ asset('assets/btc-wallet.png')}}" class="object-cover w-32 h-32" alt="btc wallet qr-code" />
                                                         </div>
                                                     </div>
 
@@ -408,11 +411,11 @@
                                                         <div x-data="{ input: 'bc1q6h06uqphcrsnl3c0cq0eyhktykpxl9cpjgddgc', showMsg: false }" >
                                                             <div class="w-full h-full overflow-hidden">
 
-                                                                <a type="button" x-on:click="navigator.clipboard.writeText(input), showMsg = true, setTimeout(() => showMsg = false, 1000)" class="group inline-flex w-full items-center justify-center px-5 text-sm font-normal text-center text-black border-t border-purple-50  hover:bg-purple-50 truncate rounded-b cursor-copy">
+                                                                <a type="button" x-on:click="navigator.clipboard.writeText(input), showMsg = true, setTimeout(() => showMsg = false, 1000)" class="inline-flex items-center justify-center w-full px-5 text-sm font-normal text-center text-black truncate border-t rounded-b group border-purple-50 hover:bg-purple-50 cursor-copy">
 
-                                                                <button id="clipboard" class="relative pl-1 py-4 cursor-copy text-xs font-medium">Copiar para o Clipboard</button>
-                                                                    <div x-show="showMsg" x-on:click.away="showMsg = false" class="fixed bottom-3 right-3 z-20 max-w-sm overflow-hidden bg-green-100 border border-green-300 rounded" style="display: none;">
-                                                                        <p class="p-3 flex items-center justify-center text-green-600">Copiado</p>
+                                                                <button id="clipboard" class="relative py-4 pl-1 text-xs font-medium cursor-copy">Copiar para o Clipboard</button>
+                                                                    <div x-show="showMsg" x-on:click.away="showMsg = false" class="fixed z-20 max-w-sm overflow-hidden bg-green-100 border border-green-300 rounded bottom-3 right-3" style="display: none;">
+                                                                        <p class="flex items-center justify-center p-3 text-green-600">Copiado</p>
                                                                     </div>
                                                                 </a>
 
@@ -461,10 +464,10 @@
                                             </button>
 
                                             <!-- Modal -->
-                                            <div x-show="eth" class="fixed inset-0 flex items-center justify-center z-50">
-                                                <div class="bg-white rounded-lg p-6 w-96 max-w-full shadow-lg transform transition-all duration-300" x-show.transition.opacity="eth">
+                                            <div x-show="eth" class="fixed inset-0 z-50 flex items-center justify-center">
+                                                <div class="max-w-full p-6 transition-all duration-300 transform bg-white rounded-lg shadow-lg w-96" x-show.transition.opacity="eth">
                                                     <!-- Modal Header -->
-                                                    <div class="flex justify-between items-center border-b-2 border-gray-200 pb-4">
+                                                    <div class="flex items-center justify-between pb-4 border-b-2 border-gray-200">
                                                         <h2 class="text-2xl font-semibold">Carteira Ethereum</h2>
                                                         <button x-on:click="eth = false" class="text-gray-500 hover:text-gray-700 focus:outline-none">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
@@ -477,8 +480,8 @@
                                                     <!-- Modal Content -->
                                                     <div class="mt-6 space-y-4">
                                                         <div class="flex flex-col space-y-4">
-                                                            <div class="flex items-center flex-col space-y-4">
-                                                                <img src="{{ asset('assets/eth-wallet.png')}}" class="w-32 h-32 object-cover" alt="btc wallet qr-code" />
+                                                            <div class="flex flex-col items-center space-y-4">
+                                                                <img src="{{ asset('assets/eth-wallet.png')}}" class="object-cover w-32 h-32" alt="btc wallet qr-code" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -489,11 +492,11 @@
 
                                                         <div class="w-full h-full overflow-hidden">
 
-                                                                <a type="button" x-on:click="navigator.clipboard.writeText(input), showMsg = true, setTimeout(() => showMsg = false, 1000)" class="group inline-flex w-full items-center justify-center px-5 text-sm font-normal text-center text-black border-t border-purple-50 hover:bg-purple-50 truncate rounded-b cursor-copy">
+                                                                <a type="button" x-on:click="navigator.clipboard.writeText(input), showMsg = true, setTimeout(() => showMsg = false, 1000)" class="inline-flex items-center justify-center w-full px-5 text-sm font-normal text-center text-black truncate border-t rounded-b group border-purple-50 hover:bg-purple-50 cursor-copy">
 
-                                                                <button id="clipboard" class="relative py-4 cursor-copy text-xs font-medium">Copiar para o Clipboard</button>
-                                                                    <div x-show="showMsg" x-on:click.away="showMsg = false" class="fixed bottom-3 right-3 z-20 max-w-sm overflow-hidden bg-green-100 border border-green-300 rounded" style="display: none;">
-                                                                        <p class="p-3 flex items-center justify-center text-green-600">Copiado</p>
+                                                                <button id="clipboard" class="relative py-4 text-xs font-medium cursor-copy">Copiar para o Clipboard</button>
+                                                                    <div x-show="showMsg" x-on:click.away="showMsg = false" class="fixed z-20 max-w-sm overflow-hidden bg-green-100 border border-green-300 rounded bottom-3 right-3" style="display: none;">
+                                                                        <p class="flex items-center justify-center p-3 text-green-600">Copiado</p>
                                                                     </div>
                                                                 </a>
 
@@ -516,11 +519,11 @@
     </main>
 </div>
 
-<footer class="bg-gray-900 flex justify-center py-6 text-center text-gray-300 w-full">
+<footer class="flex justify-center w-full py-6 text-center text-gray-300 bg-gray-900">
     <div class="flex flex-col w-10/12">
         <p class="text-sm">&copy; {{date_format(now(), 'Y')}} API Viacnt. Esta Api é um projeto open source sob a
             licença MIT.</p>
-        <p class="text-sm mt-4">
+        <p class="mt-4 text-sm">
             Não distribuímos ou comercializamos bases de dados.
         </p>
     </div>
