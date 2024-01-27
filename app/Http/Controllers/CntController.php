@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Cnae;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class CntController extends Controller
 {
@@ -23,16 +25,15 @@ class CntController extends Controller
     {
         $cnae = preg_replace('/^(\d{4})(\d{1})(\d{2})$/', '$1-$2/$3', $cnae);
 
-        $cnae = Cnae::join('cnae_items', 'cnaes.id', '=', 'cnae_items.cnae_id')
-            ->where('cnae_code', $cnae)
-            ->select('cnaes.cnae_code', 'cnaes.cnae_description', 'cnae_items.cnae_item as cnt', 'cnae_items.item_description as cnt_description')
-            ->get();
+        $cnae = Cnae::where('cnae_code', $cnae)->with('cnaeItem')->first();
 
-        if ($cnae->isEmpty()) {
-            return response()->json(['error' => 'not found'], 404);
+        if (empty($cnae)) {
+            return response()->json(['message' => 'cnae not found'], JsonResponse::HTTP_NOT_FOUND);
         }
 
-        return response()->json($cnae);
+        $apiResource = request()->apiNamespace.'Resources\CnaeResource';
+
+        return response()->json(new $apiResource($cnae), JsonResponse::HTTP_OK);
     }
 
     /**
