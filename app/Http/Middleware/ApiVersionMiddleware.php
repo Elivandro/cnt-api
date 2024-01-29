@@ -5,8 +5,8 @@ declare(strict_types = 1);
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiVersionMiddleware
@@ -14,15 +14,17 @@ class ApiVersionMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param Closure(Request): (Response) $next
      */
     public function handle(Request $request, Closure $next): Response
     {
         $param = $request->route('apiVersion');
 
-        $apiVersion = $param === 'latest' ? config('api.latest_version') : $param;
+        $apiVersion = $param == 'latest' ? config('api.latest_version') : $param;
 
-        abort_if(!in_array($apiVersion, config('api.available_versions')), JsonResponse::HTTP_NOT_FOUND, 'API version is not available');
+        if (!in_array($apiVersion, config('api.available_versions'))) {
+            return new JsonResponse(['error' => 'API version is not available'], JsonResponse::HTTP_NOT_FOUND);
+        }
 
         $request->merge([
             'apiNamespace' => "App\Api\\$apiVersion\\",
@@ -32,4 +34,5 @@ class ApiVersionMiddleware
 
         return $next($request);
     }
+
 }

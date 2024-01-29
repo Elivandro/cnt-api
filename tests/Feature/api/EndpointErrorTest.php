@@ -1,9 +1,7 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\api;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class EndpointErrorTest extends TestCase
@@ -16,7 +14,7 @@ class EndpointErrorTest extends TestCase
 
         $response->assertStatus(404)
             ->assertJson([
-                'error' => 'not found'
+                'message' => 'cnae not found'
             ]);
     }
 }

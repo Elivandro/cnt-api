@@ -25,8 +25,12 @@ class ProfileTest extends TestCase
     {
         $user = User::factory()->create();
 
+        $this->post('login', [
+            'email' => $user->email,
+            'password' => 'password',
+        ]);
+
         $response = $this
-            ->actingAs($user)
             ->patch('/profile', [
                 'name' => 'Test User',
                 'email' => 'test@example.com',

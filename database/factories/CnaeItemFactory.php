@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Cnae;
 use App\Models\CnaeItem;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,7 +19,7 @@ class CnaeItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'cnae_id' => fake()->numberBetween(1, 10),
+            'cnae_id' => Cnae::inRandomOrder()->first()->id,
             'cnae_item' => '01.01',
             'item_description' => 'Análise e desenvolvimento de sistemas.'
         ];
