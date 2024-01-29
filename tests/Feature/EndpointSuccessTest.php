@@ -2,8 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class EndpointSuccessTest extends TestCase
@@ -13,12 +11,10 @@ class EndpointSuccessTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $url = 'http://localhost/api/v1/cnt/9511800';
-
-        $response = file_get_contents($url);
+        $response = $this->get('http://localhost/api/v1/cnt/6201500');
 
         $this->assertNotEmpty($response);
 
-        $this->assertStringContainsString('cnae_code', $response);
+        $this->assertStringContainsString('cnae_code', $response->content());
     }
 }
