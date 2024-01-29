@@ -1,13 +1,11 @@
 <?php
 
-declare(strict_types = 1);
-
 namespace App\Pulse\Recorders;
 
 use Illuminate\Config\Repository;
 use Illuminate\Support\Facades\Process;
 use Laravel\Pulse\Events\SharedBeat;
-use Laravel\Pulse\Pulse;
+use Laravel\Pulse\Facades\Pulse;
 
 final class ComposerOutdated
 {
@@ -18,11 +16,8 @@ final class ComposerOutdated
         //
     }
 
-    public function record(SharedBeat $event): void
+    public function record(): void
     {
-        if($event->time !== $event->time->startOfDay()){
-            return;
-        }
 
         $outdated = Process::run('composer outdated -D -f json');
 
