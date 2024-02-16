@@ -84,13 +84,6 @@ Consequently, to maintain compatibility between development environments, we wil
 
 <br />
 
-### 5.2. Set Up the Environment
-First, clone the repository by executing the following command:
-
-```bash
-$ git clone https://github.com/TiagoLemosNeitzke/gerencie_mei.git
-
-```
 ### 5.2. Set up the environment
 First, clone the repository by executing the following command:
 
@@ -101,54 +94,12 @@ $ git clone https://github.com/TiagoLemosNeitzke/gerencie_mei.git
 After cloning the repository, access the project folder and execute the following command:
 
 ```bash
-$ ./sail config
+$ make
 ```
 
 📝 Note
-> This command will create the `.env` file and configure the environment variables for the project.
-
-
-📝 Observation
-> If you are running the project for the first time, it's necessary to execute the above command so that composer and npm dependencies are installed correctly. Additionally, this command will create an .env file for you (if it doesn't already exist) based on the .env.example file.
-
-```bash
-cp .env.example .env
-
-docker run --rm     
--u "$(id -u):$(id -g)"     
--v "$(pwd):/var/www/html"     
--w /var/www/html     
-laravelsail/php82-composer:latest     
-composer install --ignore-platform-reqs
-
-npm install
-```
-
-### 5.3. Create the Environment
-Once all `composer` and `npm` dependencies have been installed, we can create the environment by executing the following command:
-
-```bash
-$ ./sail init
-```
-
-📝 Note
-> This command will download all Docker images and create all containers necessary for the project to work.
-
-📝 Observation:
->If the Docker images already exist on your workstation, their download will be skipped. If the Dockerfile of the application image is altered, this command will rebuild the image before running the container.
-
-After downloading all Docker images, all containers will be started, thus concluding the creation cycle of the development environment.
-
-<br />
-
-### 5.4. Building Assets
-To build the assets, execute the following command:
-
-```bash
-$ ./sail npm run dev
-```
-
-<br />
+> This command will create the `.env` file and configure the environment variables, run the migrations and run npm commands for the project. 
+ 
 
 ## 6. Open Application in Browser
 With everything set up, it's finally time to see the application in action. To do this, access the URL http://localhost:${APP_PORT} in your favorite browser.
