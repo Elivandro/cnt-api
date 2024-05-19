@@ -26,5 +26,4 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           script: |
             cd ${{ secrets.PROJECT_PATH }}
-            chmod +x ./.scripts/deploy.sh
             ./.scripts/deploy.sh
