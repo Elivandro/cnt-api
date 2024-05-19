@@ -7,19 +7,16 @@ echo "Deployment started ..."
 git pull origin main
 
 # Install composer dependencies
-echo "Installing the composer dependencies"
-composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --quiet
+composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Install npm dependencies
-echo "Installing the npm dependencies"
 npm install -y --silent
 
 # Recreate cache
-echo "Optimizing the cache"
+php artisan optimize:clear
 php artisan optimize
 
 # Compile npm assets
-echo "Compilling the npm assets"
 npm run build
 
 # Run database migrations
