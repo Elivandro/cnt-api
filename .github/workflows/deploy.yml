@@ -25,5 +25,6 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd ${{ secrets.PROJECT_PATH }} chmod +x ./.scripts/deploy.sh
-            ./.scrupts/deploy.sh
+            cd ${{ secrets.PROJECT_PATH }}
+            chmod +x ./.scripts/deploy.sh
+            ./.scripts/deploy.sh
