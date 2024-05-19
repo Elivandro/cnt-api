@@ -18,6 +18,6 @@
     "dependencies": {
         "@ryangjchandler/alpine-clipboard": "^2.3.0",
         "alpinejs": "^3.13.3",
-        "npm": "^10.4.0"
+        "npm": "^10.8.0"
     }
 }
