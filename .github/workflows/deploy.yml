@@ -24,4 +24,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
-          script: "cd ${{ secrets.PROJECT_PATH }} && ./.scripts/deploy.sh"
+          script: |
+            cd ${{ secrets.PROJECT_PATH }} chmod +x ./.scripts/deploy.sh
+            ./.scrupts/deploy.sh
