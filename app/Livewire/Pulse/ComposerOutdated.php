@@ -16,7 +16,7 @@ class ComposerOutdated extends Card
     {
         $packages = Pulse::values('composer_outdated', ['output'])->first();
 
-        $packages = json_decode($packages?->value, true)['installed'];
+        $packages = json_decode($packages->value, true)['installed'];
 
         return view('livewire.pulse.composer-outdated', compact('packages'));
     }
